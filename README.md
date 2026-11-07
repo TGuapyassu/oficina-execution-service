@@ -26,4 +26,9 @@ Fila de execução, diagnóstico e reparos. Publica eventos `execution.*` para a
 
 ## Deploy
 
-Porta **8002**. Ver [`../docker-compose.microservices.yml`](../docker-compose.microservices.yml) e manifests em `oficina-infra-k8s/manifests/microservices/`.
+Porta **8002**. Stack: [`../oficina-os-service/docker-compose.stack.yml`](../oficina-os-service/docker-compose.stack.yml). K8s: `infra-k8s/manifests/app/`.
+
+## Infraestrutura
+
+- `infra-db/` — RDS `oficina_execution`
+- `infra-k8s/manifests/app/` — Deploy Kubernetes
