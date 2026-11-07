@@ -2,7 +2,7 @@
 
 1. Rode localmente: `pip install -e ../oficina-contracts && pip install -e ".[dev]" && pytest --cov-report=term-missing`
 2. No GitHub Actions, baixe o artefato **coverage-report** do workflow CI/CD.
-3. Cole um print do terminal ou do relatório HTML em `cobertura-AAAA-MM-DD.png` nesta pasta e referencie no README.
+3. Evidência commitada: `cobertura-local.txt` e `cobertura-resumo.svg`; `htmlcov/` é gerado pelo `pytest` e não vai para o git.
 
 Exemplo de link no README:
 

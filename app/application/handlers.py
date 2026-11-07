@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 
 from app.domain.work_order import WorkOrder
 from app.infrastructure.db import get_by_os, save_work
-from app.infrastructure.messaging import publish
+from app.infrastructure.publisher import publish
 from app.infrastructure.redis_queue import ExecutionQueue
 from oficina_contracts.events import DomainEvent
 from oficina_contracts.routing import RoutingKey

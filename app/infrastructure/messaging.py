@@ -15,22 +15,6 @@ from oficina_contracts.routing import EXCHANGE_EVENTS
 log = logging.getLogger(__name__)
 
 
-def publish(routing_key: str, body: dict) -> None:
-    url = get_settings().rabbitmq_url
-    if not url:
-        return
-    conn = pika.BlockingConnection(pika.URLParameters(url))
-    ch = conn.channel()
-    ch.exchange_declare(exchange=EXCHANGE_EVENTS, exchange_type="topic", durable=True)
-    ch.basic_publish(
-        exchange=EXCHANGE_EVENTS,
-        routing_key=routing_key,
-        body=json.dumps(body, default=str),
-        properties=pika.BasicProperties(delivery_mode=2, content_type="application/json"),
-    )
-    conn.close()
-
-
 def _loop(stop: threading.Event) -> None:
     url = get_settings().rabbitmq_url
     if not url:

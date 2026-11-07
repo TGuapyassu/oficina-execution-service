@@ -4,7 +4,16 @@
 
 ## Cobertura
 
-`pytest --cov-report=html` · artefato **coverage-report** no CI · [`docs/evidencias/`](docs/evidencias/)
+```bash
+pip install -e ".[dev]"
+pytest
+```
+
+Evidência local (≥80%): [`docs/evidencias/cobertura-local.txt`](docs/evidencias/cobertura-local.txt) · [`cobertura-resumo.svg`](docs/evidencias/cobertura-resumo.svg) · `docs/evidencias/htmlcov/` após o `pytest`. CI: artefato **coverage-report**.
+
+## API (Swagger)
+
+Stack local: **http://localhost:8002/docs**
 
 ## Documentação
 
@@ -32,3 +41,8 @@ Porta **8002**. Stack: [`../oficina-os-service/docker-compose.stack.yml`](../ofi
 
 - `infra-db/` — RDS `oficina_execution`
 - `infra-k8s/manifests/app/` — Deploy Kubernetes
+
+## Postman
+
+Collection mínima: [`docs/postman/oficina-execution-service.postman_collection.json`](docs/postman/oficina-execution-service.postman_collection.json).  
+Fluxo E2E Saga: [`../oficina-os-service/docs/postman/oficina-fase4-microservices.postman_collection.json`](../oficina-os-service/docs/postman/oficina-fase4-microservices.postman_collection.json).

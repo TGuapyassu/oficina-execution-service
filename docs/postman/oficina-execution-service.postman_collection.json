@@ -1,0 +1,25 @@
+{
+  "info": {
+    "name": "Execution Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:8002" }],
+  "item": [
+    {
+      "name": "Health",
+      "request": { "method": "GET", "url": "{{baseUrl}}/health" }
+    },
+    {
+      "name": "Ready",
+      "request": { "method": "GET", "url": "{{baseUrl}}/ready" }
+    },
+    {
+      "name": "Fila",
+      "request": { "method": "GET", "url": "{{baseUrl}}/queue" }
+    },
+    {
+      "name": "Work order",
+      "request": { "method": "GET", "url": "{{baseUrl}}/work-orders/1" }
+    }
+  ]
+}

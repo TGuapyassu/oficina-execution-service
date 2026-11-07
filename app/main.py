@@ -69,7 +69,7 @@ def advance_diagnosis(os_id: int) -> dict:
             raise HTTPException(404, "Work order não encontrada")
         if wo.status != WorkStatus.EM_DIAGNOSTICO:
             raise HTTPException(409, "Status inválido para diagnóstico")
-        from app.infrastructure.messaging import publish
+        from app.infrastructure.publisher import publish
         from oficina_contracts.events import DomainEvent
         from oficina_contracts.routing import RoutingKey
 
